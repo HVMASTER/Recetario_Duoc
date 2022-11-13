@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Controlador;
 
 import Bd.Conexion;
@@ -9,8 +5,6 @@ import Modelo.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.SQLException;
-
 /**
  *
  * @author Hernán
@@ -19,9 +13,7 @@ public class RegistroUsuario {
     
     public boolean AgregarNuevoUsuario(Usuario usuario){
         
-      try{
-          
-      
+      try{    
         Conexion conexion = new Conexion();
         Connection connx = conexion.obtenerConexion();
         
@@ -46,22 +38,13 @@ public class RegistroUsuario {
         connx.close();
         System.out.println("Usuario agregado Correctamente");
         return true;
-        
-        
+               
       }catch(SQLException exception){
           
           System.out.println("No se pudo agregar los cambios a la Base de Datos SQL");
-          return false;
-          
-          
-          
+          return false; 
       }
-            
-        
-
-        
-        
-        
+    
     }
     
 }
