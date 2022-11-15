@@ -9,25 +9,21 @@ package Modelo;
  * @author Hernán
  */
 public class Usuario {
-    
+
     //Atributos
-    private int idUsuario;
-    private String nombreUsuario, correoElectronico, contrasena, nivelPermiso;
-    
-    
-    //Constructores
+    private int idUsuario, nivelPermiso;
+    private String nombreUsuario, correoElectronico, contrasena;
+
     public Usuario() {
     }
 
-    public Usuario(int idUsuario, String nombreUsuario, String correoElectronico, String contrasena, String nivelPermiso) {
+    public Usuario(int idUsuario, int nivelPermiso, String nombreUsuario, String correoElectronico, String contrasena) {
         this.idUsuario = idUsuario;
+        this.nivelPermiso = nivelPermiso;
         this.nombreUsuario = nombreUsuario;
         this.correoElectronico = correoElectronico;
         this.contrasena = contrasena;
-        this.nivelPermiso = nivelPermiso;
     }
-    
-    //Conmutadores y accesadores
 
     public int getIdUsuario() {
         return idUsuario;
@@ -35,6 +31,14 @@ public class Usuario {
 
     public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
+    }
+
+    public int getNivelPermiso() {
+        return nivelPermiso;
+    }
+
+    public void setNivelPermiso(int nivelPermiso) {
+        this.nivelPermiso = nivelPermiso;
     }
 
     public String getNombreUsuario() {
@@ -61,23 +65,9 @@ public class Usuario {
         this.contrasena = contrasena;
     }
 
-    public String getNivelPermiso() {
-        return nivelPermiso;
-    }
-
-    public void setNivelPermiso(String nivelPermiso) {
-        this.nivelPermiso = nivelPermiso;
-    }
-    
-    
-    //TosString
     @Override
     public String toString() {
-        return "Usuario{" + "idUsuario=" + idUsuario + ", nombreUsuario=" + nombreUsuario + ", correoElectronico=" + correoElectronico + ", contrasena=" + contrasena + ", nivelPermiso=" + nivelPermiso + '}';
+        return "Usuario{" + "idUsuario=" + idUsuario + ", nivelPermiso=" + nivelPermiso + ", nombreUsuario=" + nombreUsuario + ", correoElectronico=" + correoElectronico + ", contrasena=" + contrasena + '}';
     }
-    
-    
-    
-    
-    
+
 }

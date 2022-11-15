@@ -9,53 +9,45 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.ResultSet;
+
 /**
  *
  * @author Hernán
  */
 public class RegistroUsuario {
-    
-    public boolean AgregarNuevoUsuario(Usuario usuario){
-        
-      try{    
-        Conexion conexion = new Conexion();
-        Connection connx = conexion.obtenerConexion();
-        
-        String queryNombreUsuario = "INSERT INTO usuario(nombreUsuario) VALUES = (?)";
-        PreparedStatement pstNomUser = connx.prepareStatement(queryNombreUsuario);
-               
-        String queryCorreoElectronico = "INSERT INTO usuario(correoElectronico) VALUES = (?)";
-        PreparedStatement pstCorreo = connx.prepareStatement(queryCorreoElectronico);
-        
-        String queryContraseña = "INSERT INTO usuario(contraseña) VALUES = (?)";
-        PreparedStatement pstContraseña = connx.prepareStatement(queryContraseña);
-        
-        pstNomUser.executeUpdate();
-        pstNomUser.close();
-        
-        pstCorreo.executeUpdate();
-        pstCorreo.close();
-        
-        pstContraseña.executeUpdate();
-        pstContraseña.close();
-        
-        connx.close();
-        System.out.println("Usuario agregado Correctamente");
-        return true;
-               
-      }catch(SQLException exception){
-          
-          System.out.println("No se pudo agregar los cambios a la Base de Datos SQL");
-          return false; 
-      }
-      
+
+    public boolean AgregarUsuario(Usuario usuario) {
+
+        try {
+            Conexion conexion = new Conexion();
+            Connection connx = conexion.obtenerConexion();
+
+            String sql = "INSERT INTO usuario(nombreUsuario) VALUES = (?, ?, ?)";
+            PreparedStatement pst = connx.prepareCall(sql);
+            pst.setString(1, usuario.getNombreUsuario());
+            pst.setString(2, usuario.getCorreoElectronico());
+            pst.setString(3, usuario.getContrasena());
+
+            pst.executeUpdate();
+            pst.close();
+            connx.close();
+
+            System.out.println("Usuario agregado Correctamente");
+            return true;
+
+        } catch (SQLException e) {
+
+            System.out.println("No se pudo agregar los cambios a la Base de Datos SQL" + e.getMessage());
+            return false;
+        }
+
     }
-    
-    public List<Receta> MostrarReceta(){
-        
+
+    public List<Receta> MostrarReceta() {
+
         List<Receta> receta = new ArrayList<>();
-        
-        try{
+
+        try {
             Conexion conexion = new Conexion();
             Connection connx = conexion.obtenerConexion();
 
@@ -64,25 +56,25 @@ public class RegistroUsuario {
 
             ResultSet res = pstReceta.executeQuery();
 
-            while(res.next()){
+            while (res.next()) {
                 Receta recetaC = new Receta();
                 recetaC.setNombreReceta(res.getString("nombreReceta"));
                 recetaC.setIngredienteReceta(res.getString("ingredienteReceta"));
                 recetaC.setDescripcion(res.getString("descripcion"));
 
-                receta.add(recetaC);    
+                receta.add(recetaC);
             }
 
             res.close();
             pstReceta.close();
             connx.close();
-            
-        }catch(SQLException e){
-            
-            System.out.println("No se pudieron tomar los datos desde la Base de Datos SQL");   
+
+        } catch (SQLException e) {
+
+            System.out.println("No se pudieron tomar los datos desde la Base de Datos SQL");
         }
-        
+
         return receta;
     }
-    
+
 }
