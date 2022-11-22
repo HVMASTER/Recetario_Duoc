@@ -22,7 +22,7 @@ public class RegistroUsuario {
             Conexion conexion = new Conexion();
             Connection connx = conexion.obtenerConexion();
 
-            String sql = "INSERT INTO usuario(nombreUsuario) VALUES = (?, ?, ?)";
+            String sql = "INSERT INTO usuario(nombreUsuario, correoElectronico, contrasena) VALUES = (?, ?, ?)";
             PreparedStatement pst = connx.prepareCall(sql);
             pst.setString(1, usuario.getNombreUsuario());
             pst.setString(2, usuario.getCorreoElectronico());
