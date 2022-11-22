@@ -135,7 +135,7 @@ public class FormLogin extends javax.swing.JFrame {
         
             if (rs.next()) {
                 JOptionPane.showMessageDialog(this, "Ingreso de usuario exitoso!");
-                FormMenu menu = new FormMenu();
+                Form_Menu menu = new Form_Menu();
                 menu.setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos!");
