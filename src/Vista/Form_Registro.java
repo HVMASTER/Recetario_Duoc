@@ -154,7 +154,7 @@ public class Form_Registro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_cancelarActionPerformed
-        Form_Login log = new Form_Login();
+        FormLogin log = new FormLogin();
         log.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton_cancelarActionPerformed
