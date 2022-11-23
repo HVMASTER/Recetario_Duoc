@@ -9,6 +9,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.ResultSet;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 /**
  *
@@ -22,8 +24,8 @@ public class RegistroUsuario {
             Conexion conexion = new Conexion();
             Connection connx = conexion.obtenerConexion();
 
-            String sql = "INSERT INTO usuario(nombreUsuario, correoElectronico, contrasena) VALUES = (?, ?, ?)";
-            PreparedStatement pst = connx.prepareCall(sql);
+            String query = "INSERT INTO usuario(nombreUsuario, correoElectronico, contrasena) VALUES (?,?,?)";
+            PreparedStatement pst = connx.prepareStatement(query);
             pst.setString(1, usuario.getNombreUsuario());
             pst.setString(2, usuario.getCorreoElectronico());
             pst.setString(3, usuario.getContrasena());
@@ -31,13 +33,11 @@ public class RegistroUsuario {
             pst.executeUpdate();
             pst.close();
             connx.close();
-
-            System.out.println("Usuario agregado Correctamente");
             return true;
 
         } catch (SQLException e) {
 
-            System.out.println("No se pudo agregar los cambios a la Base de Datos SQL" + e.getMessage());
+            System.out.println("No se pudo agregar los cambios a la Base de Datos" + e.getMessage());
             return false;
         }
 
@@ -105,6 +105,12 @@ public class RegistroUsuario {
     **/
     
     
-    
+    public boolean verificadorCorreo(String correo){
+        
+        Pattern patrones = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                                    + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+        Matcher mat = patrones.matcher(correo);
+        return mat.find();
+    }
     
 }

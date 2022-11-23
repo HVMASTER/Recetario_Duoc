@@ -17,13 +17,20 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(int idUsuario, int nivelPermiso, String nombreUsuario, String correoElectronico, String contrasena) {
+    public Usuario(int idUsuario,int nivelPermiso,String nombreUsuario, String correoElectronico, String contrasena) {
         this.idUsuario = idUsuario;
         this.nivelPermiso = nivelPermiso;
         this.nombreUsuario = nombreUsuario;
         this.correoElectronico = correoElectronico;
         this.contrasena = contrasena;
     }
+
+    public Usuario(String nombreUsuario, String correoElectronico, String contrasena) {
+        this.nombreUsuario = nombreUsuario;
+        this.correoElectronico = correoElectronico;
+        this.contrasena = contrasena;
+    }
+    
 
     public int getIdUsuario() {
         return idUsuario;
@@ -69,5 +76,7 @@ public class Usuario {
     public String toString() {
         return "Usuario{" + "idUsuario=" + idUsuario + ", nivelPermiso=" + nivelPermiso + ", nombreUsuario=" + nombreUsuario + ", correoElectronico=" + correoElectronico + ", contrasena=" + contrasena + '}';
     }
+
+    
 
 }
