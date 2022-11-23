@@ -1,8 +1,6 @@
 package Controlador;
 
-import Modelo.CategoriaCoctel;
 import Modelo.CategoriaReceta;
-import Modelo.Coctel;
 import Modelo.Receta;
 import Modelo.Usuario;
 
@@ -16,9 +14,7 @@ public class Principal {
         
     Usuario usuario = new Usuario();
     Receta receta = new Receta();
-    Coctel coctel = new Coctel();
     CategoriaReceta categoriaReceta = new CategoriaReceta();
-    CategoriaCoctel categoriaCoctel = new CategoriaCoctel();
    
     }
        
