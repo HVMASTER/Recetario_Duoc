@@ -34,8 +34,11 @@ public class FormLogin extends javax.swing.JFrame {
         jbtn_ingresar = new javax.swing.JButton();
         jtxt_usuario = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jbtn_registro = new javax.swing.JButton();
         jpass_contrasena = new javax.swing.JPasswordField();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jmenu_salir = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 255, 255));
@@ -58,10 +61,10 @@ public class FormLogin extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/usuario.png"))); // NOI18N
 
-        jButton1.setText("CREAR NUEVO USUARIO");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jbtn_registro.setText("REGISTRARSE");
+        jbtn_registro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jbtn_registroActionPerformed(evt);
             }
         });
 
@@ -80,8 +83,8 @@ public class FormLogin extends javax.swing.JFrame {
                     .addComponent(jpass_contrasena))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(56, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addContainerGap(116, Short.MAX_VALUE)
+                .addComponent(jbtn_registro)
                 .addGap(53, 53, 53)
                 .addComponent(jbtn_ingresar)
                 .addGap(56, 56, 56))
@@ -95,7 +98,7 @@ public class FormLogin extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jtxt_usuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -106,9 +109,23 @@ public class FormLogin extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbtn_ingresar)
-                    .addComponent(jButton1))
+                    .addComponent(jbtn_registro))
                 .addGap(36, 36, 36))
         );
+
+        jmenu_salir.setText("Salir");
+
+        jMenuItem1.setText("Exit");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jmenu_salir.add(jMenuItem1);
+
+        jMenuBar1.add(jmenu_salir);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -118,10 +135,11 @@ public class FormLogin extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtn_ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_ingresarActionPerformed
@@ -129,7 +147,7 @@ public class FormLogin extends javax.swing.JFrame {
         String nombreUsuario = this.jtxt_usuario.getText();
         String contrasena = String.valueOf(jpass_contrasena.getPassword());//A ESTO SE LE DENOMINA "CASTING", DONDE ESTO DEVUELVE UN ARREGLO DE CARACTERERES Y ESE ARREGLO SE CONVIERTE EN UN STRING
         RegistroUsuario reg = new RegistroUsuario();
-        String queryUser = "SELECT * FROM usuario WHERE nombreUsuario = '"+nombreUsuario+"' AND contraseña = '"+contrasena+"'";
+        String queryUser = "SELECT * FROM usuario WHERE nombreUsuario = '"+nombreUsuario+"' AND contrasena = '"+contrasena+"'";
         Statement stm = cnx.obtenerConexion().createStatement();      
         ResultSet rs = stm.executeQuery(queryUser);
         
@@ -145,9 +163,14 @@ public class FormLogin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jbtn_ingresarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-   
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jbtn_registroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_registroActionPerformed
+        Form_Registro freg = new Form_Registro();
+        freg.setVisible(true);
+    }//GEN-LAST:event_jbtn_registroActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        super.dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,12 +208,15 @@ public class FormLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbtn_ingresar;
+    private javax.swing.JButton jbtn_registro;
+    private javax.swing.JMenu jmenu_salir;
     private javax.swing.JPasswordField jpass_contrasena;
     private javax.swing.JTextField jtxt_usuario;
     // End of variables declaration//GEN-END:variables

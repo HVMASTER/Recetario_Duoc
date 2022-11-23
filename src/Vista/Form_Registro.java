@@ -10,6 +10,7 @@ import Modelo.Usuario;
 import java.sql.Connection;
 import javax.swing.JOptionPane;
 
+
 /**
  *
  * @author MONKEY.D.LUFFY
@@ -21,6 +22,10 @@ public class Form_Registro extends javax.swing.JFrame {
      */
     public Form_Registro() {
         initComponents();
+        
+        this.jlbl_email.setVisible(false);
+        
+        
     }
 
     /**
@@ -35,58 +40,67 @@ public class Form_Registro extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel_nombre = new javax.swing.JLabel();
-        jtxt_nombre = new javax.swing.JTextField();
+        jtxt_nombreUsuario = new javax.swing.JTextField();
         jLabel_correo = new javax.swing.JLabel();
         jtxt_correo = new javax.swing.JTextField();
         jLabel_contraseña = new javax.swing.JLabel();
-        jtxt_contraseña = new javax.swing.JTextField();
-        jButton_cancelar = new javax.swing.JButton();
-        jButton_guardar = new javax.swing.JButton();
+        jbtn_cancelar = new javax.swing.JButton();
+        jbtn_guardar = new javax.swing.JButton();
+        jpass_contraseña = new javax.swing.JPasswordField();
+        jlbl_email = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jpass_repeatContraseña = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("REGISTRO DE USUARIO");
 
-        jLabel_nombre.setText("NOMBRE*");
+        jLabel_nombre.setText("Nombre de usuario:");
 
-        jtxt_nombre.addActionListener(new java.awt.event.ActionListener() {
+        jtxt_nombreUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxt_nombreActionPerformed(evt);
+                jtxt_nombreUsuarioActionPerformed(evt);
             }
         });
 
-        jLabel_correo.setText("CORREO ELECTRONICO*");
+        jLabel_correo.setText("Correo electronico:");
 
         jtxt_correo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtxt_correoActionPerformed(evt);
             }
         });
-
-        jLabel_contraseña.setText("CONTRASEÑA*");
-
-        jtxt_contraseña.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxt_contraseñaActionPerformed(evt);
+        jtxt_correo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jtxt_correoKeyReleased(evt);
             }
         });
 
-        jButton_cancelar.setText("CANCELAR");
-        jButton_cancelar.addActionListener(new java.awt.event.ActionListener() {
+        jLabel_contraseña.setText("Contraseña:");
+
+        jbtn_cancelar.setText("CANCELAR");
+        jbtn_cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_cancelarActionPerformed(evt);
+                jbtn_cancelarActionPerformed(evt);
             }
         });
 
-        jButton_guardar.setText("GUARDAR");
-        jButton_guardar.addActionListener(new java.awt.event.ActionListener() {
+        jbtn_guardar.setText("GUARDAR");
+        jbtn_guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_guardarActionPerformed(evt);
+                jbtn_guardarActionPerformed(evt);
             }
         });
+
+        jlbl_email.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        jlbl_email.setForeground(new java.awt.Color(255, 0, 0));
+        jlbl_email.setText("Email invalido(*)");
+
+        jLabel2.setText("Repita Contraseña:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -94,48 +108,61 @@ public class Form_Registro extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(85, 85, 85)
-                .addComponent(jButton_guardar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
-                .addComponent(jButton_cancelar)
-                .addGap(102, 102, 102))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel_correo)
-                    .addComponent(jLabel_contraseña)
-                    .addComponent(jLabel_nombre))
+                .addComponent(jbtn_guardar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jtxt_correo)
-                    .addComponent(jtxt_nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                    .addComponent(jtxt_contraseña))
+                .addComponent(jbtn_cancelar)
+                .addGap(102, 102, 102))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jlbl_email))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel_nombre)
+                            .addComponent(jLabel_correo)
+                            .addComponent(jLabel_contraseña)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jpass_contraseña)
+                            .addComponent(jtxt_correo, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jtxt_nombreUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                            .addComponent(jpass_repeatContraseña))))
                 .addGap(19, 19, 19))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(132, 132, 132)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 611, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(7, 7, 7)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_nombre)
-                    .addComponent(jtxt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
+                    .addComponent(jtxt_nombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jlbl_email)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel_correo)
-                    .addComponent(jtxt_correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
+                    .addComponent(jtxt_correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel_correo))
+                .addGap(38, 38, 38)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel_contraseña)
-                    .addComponent(jtxt_contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                    .addComponent(jpass_contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel_contraseña))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton_cancelar)
-                    .addComponent(jButton_guardar))
+                    .addComponent(jLabel2)
+                    .addComponent(jpass_repeatContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbtn_cancelar)
+                    .addComponent(jbtn_guardar))
                 .addGap(35, 35, 35))
         );
 
@@ -151,43 +178,70 @@ public class Form_Registro extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_cancelarActionPerformed
+    private void jbtn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_cancelarActionPerformed
         FormLogin log = new FormLogin();
         log.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton_cancelarActionPerformed
+    }//GEN-LAST:event_jbtn_cancelarActionPerformed
 
-    private void jtxt_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_nombreActionPerformed
+    private void jtxt_nombreUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_nombreUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtxt_nombreActionPerformed
+    }//GEN-LAST:event_jtxt_nombreUsuarioActionPerformed
 
     private void jtxt_correoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_correoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxt_correoActionPerformed
 
-    private void jtxt_contraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxt_contraseñaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxt_contraseñaActionPerformed
+    private void jbtn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_guardarActionPerformed
 
-    private void jButton_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_guardarActionPerformed
-
-        String nombreUsuario = this.jtxt_nombre.getText();
+        String nombreUsuario = this.jtxt_nombreUsuario.getText();
         String correoElectronico = this.jtxt_correo.getText();
-        String contrasena = this.jtxt_contraseña.getText();
-
-        Usuario usu = new Usuario(0, 0, nombreUsuario, correoElectronico, contrasena);
+        String contrasena = String.valueOf(jpass_contraseña.getPassword());
+        String Rcontrasena = String.valueOf(jpass_repeatContraseña.getPassword());
+        
+        
+        if (this.jtxt_nombreUsuario.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "El campo 'Nombre de usuario' no debe estar vacio", "Registro de usuario", 0); 
+            this.jtxt_nombreUsuario.requestFocus();
+            return;
+        }   
+        if (this.jtxt_correo.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "El campo 'Correo electronico' no debe estar vacio", "Registro de usuario", 0);
+            this.jtxt_correo.requestFocus();
+            return;
+        }    
+        if (!contrasena.equals(Rcontrasena)) {
+            JOptionPane.showMessageDialog(null, "Las contraseñas deben ser iguales, vuelva a intentar", "Registro de usuario", 0);          
+            System.out.println(contrasena);
+            System.out.println(Rcontrasena);
+            return;
+        }   
+        
+        Usuario usuario = new Usuario(nombreUsuario, correoElectronico, contrasena);
         RegistroUsuario reg = new RegistroUsuario();
-
-        if (reg.AgregarUsuario(usu)) {
-            JOptionPane.showMessageDialog(null, "Usuario Ingresado", "Registro", 1);
-
-        } else {
-            JOptionPane.showMessageDialog(null, "Error, vuelva a intentar", "Registro", 0);
+            
+        if (reg.AgregarUsuario(usuario)) {
+            JOptionPane.showMessageDialog(null, "Registro de usuario exitoso!", "Registro de usuario", 3); 
+            dispose();
+        }else{
+            JOptionPane.showMessageDialog(null, "No se pudo completar el registro, vuelva a intentar", "Registro de usuario", 0);
         }
+        
 
-    }//GEN-LAST:event_jButton_guardarActionPerformed
+    }//GEN-LAST:event_jbtn_guardarActionPerformed
+
+    private void jtxt_correoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxt_correoKeyReleased
+        //EL KEY RELEASED ES PARA IR VERIFICANDO A MEDIDA QUE SE VA ESCRIBIENDO EN EL CAMPO DEL EMAIL
+        RegistroUsuario reg = new RegistroUsuario();
+        if (reg.verificadorCorreo(jtxt_correo.getText())) {
+            jlbl_email.setVisible(false);
+        }else{
+            jlbl_email.setVisible(true);
+        }
+    }//GEN-LAST:event_jtxt_correoKeyReleased
 
     /**
      * @param args the command line arguments
@@ -226,15 +280,18 @@ public class Form_Registro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton_cancelar;
-    private javax.swing.JButton jButton_guardar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel_contraseña;
     private javax.swing.JLabel jLabel_correo;
     private javax.swing.JLabel jLabel_nombre;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jtxt_contraseña;
+    private javax.swing.JButton jbtn_cancelar;
+    private javax.swing.JButton jbtn_guardar;
+    private javax.swing.JLabel jlbl_email;
+    private javax.swing.JPasswordField jpass_contraseña;
+    private javax.swing.JPasswordField jpass_repeatContraseña;
     private javax.swing.JTextField jtxt_correo;
-    private javax.swing.JTextField jtxt_nombre;
+    private javax.swing.JTextField jtxt_nombreUsuario;
     // End of variables declaration//GEN-END:variables
 }
