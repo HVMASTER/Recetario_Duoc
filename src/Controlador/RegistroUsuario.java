@@ -43,36 +43,6 @@ public class RegistroUsuario {
 
     }
 
-
-    
-    /*
-    public boolean ingresoUsuario(Usuario usuario){
-        
-        try{         
-        Conexion conexion = new Conexion();
-        Connection connx = conexion.obtenerConexion();
-     
-        String queryIngreso = "SELECT nombreUsuario, contraseña FROM usuario WHERE nombreUsuario = ? AND contraseña = ?";
-        PreparedStatement pstIngreso = connx.prepareStatement(queryIngreso);
-        
-        pstIngreso.executeUpdate();
-        ResultSet rs = pstIngreso.executeQuery(queryIngreso); //DEVUELVE EL RESULTADO DE UNA CONSULTA
-        
-        
-        
-        rs.close();
-        pstIngreso.close(); 
-        connx.close();
-        System.out.println("Ingreso de usuario correcto!");
-        return true;
-        }catch(SQLException e){
-            System.out.println("No se pudo ingresar al menu, usuario o contraseña incorrecta");
-          return false;           
-                }
-    }
-    **/
-    
-    
     public boolean verificadorCorreo(String correo){
         
         Pattern patrones = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
