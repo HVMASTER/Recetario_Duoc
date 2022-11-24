@@ -6,7 +6,7 @@ package Vista;
 
 /**
  *
- * @author MONKEY.D.LUFFY
+ * @author Juan Figueroa
  */
 public class Form_Menu extends javax.swing.JFrame {
 
@@ -26,146 +26,111 @@ public class Form_Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jButton_mostrar_receta = new javax.swing.JButton();
-        jButton_mostrar_coctel = new javax.swing.JButton();
-        jButton_salir = new javax.swing.JButton();
+        jbtn_recetas = new javax.swing.JButton();
+        jbtn_cocteles = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jbtm_ensaladas = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jbtn_agregar = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
+        setMaximumSize(new java.awt.Dimension(2147483, 2147483));
         setMinimumSize(getMaximumSize());
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setToolTipText("");
-        jPanel1.setMinimumSize(getMaximumSize());
-
-        jButton_mostrar_receta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_recetas.png"))); // NOI18N
-        jButton_mostrar_receta.setBorder(null);
-        jButton_mostrar_receta.setBorderPainted(false);
-        jButton_mostrar_receta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton_mostrar_receta.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_recetas_press.png"))); // NOI18N
-        jButton_mostrar_receta.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_recetas_over.png"))); // NOI18N
-        jButton_mostrar_receta.addActionListener(new java.awt.event.ActionListener() {
+        jbtn_recetas.setForeground(new java.awt.Color(238, 238, 238));
+        jbtn_recetas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_recetas.png"))); // NOI18N
+        jbtn_recetas.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jbtn_recetas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbtn_recetas.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_recetas_press.png"))); // NOI18N
+        jbtn_recetas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_recetas_over.png"))); // NOI18N
+        jbtn_recetas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_mostrar_recetaActionPerformed(evt);
+                jbtn_recetasActionPerformed(evt);
             }
         });
+        getContentPane().add(jbtn_recetas, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 410, 250));
 
-        jButton_mostrar_coctel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_coctel.png"))); // NOI18N
-        jButton_mostrar_coctel.setBorder(null);
-        jButton_mostrar_coctel.setBorderPainted(false);
-        jButton_mostrar_coctel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton_mostrar_coctel.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_coctel_press.png"))); // NOI18N
-        jButton_mostrar_coctel.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_coctel_over.png"))); // NOI18N
-
-        jButton_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_salir.png"))); // NOI18N
-        jButton_salir.setBorder(null);
-        jButton_salir.setBorderPainted(false);
-        jButton_salir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton_salir.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_salir_press.png"))); // NOI18N
-        jButton_salir.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_salir_over.png"))); // NOI18N
-        jButton_salir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_salirActionPerformed(evt);
-            }
-        });
+        jbtn_cocteles.setForeground(new java.awt.Color(238, 238, 238));
+        jbtn_cocteles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_coctel.png"))); // NOI18N
+        jbtn_cocteles.setBorder(null);
+        jbtn_cocteles.setBorderPainted(false);
+        jbtn_cocteles.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbtn_cocteles.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_coctel_press.png"))); // NOI18N
+        jbtn_cocteles.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_coctel_over.png"))); // NOI18N
+        getContentPane().add(jbtn_cocteles, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 550, 410, 250));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("MENU PRINCIPAL");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/titulo_v2.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 670, 240));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_buscar.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_buscar_press.png"))); // NOI18N
-        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_buscar_over.png"))); // NOI18N
-
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_nuevoReceta.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_postre.png"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.setBorderPainted(false);
-        jButton3.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_nuevoReceta_press.png"))); // NOI18N
-        jButton3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_nuevoReceta_over.png"))); // NOI18N
+        jButton3.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_postre_press.png"))); // NOI18N
+        jButton3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_postre_over.png"))); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 550, 410, 250));
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_nuevoCoctel.png"))); // NOI18N
-        jButton4.setBorder(null);
-        jButton4.setBorderPainted(false);
-        jButton4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_nuevoCoctel_press.png"))); // NOI18N
-        jButton4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_nuevoCoctel_over.png"))); // NOI18N
+        jbtm_ensaladas.setForeground(new java.awt.Color(238, 238, 238));
+        jbtm_ensaladas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_ensaladas.png"))); // NOI18N
+        jbtm_ensaladas.setBorder(null);
+        jbtm_ensaladas.setBorderPainted(false);
+        jbtm_ensaladas.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_ensaladas_press.png"))); // NOI18N
+        jbtm_ensaladas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_ensaladas_over.png"))); // NOI18N
+        getContentPane().add(jbtm_ensaladas, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 260, 410, 250));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(380, 380, 380)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton_mostrar_coctel)
-                                .addGap(46, 46, 46)
-                                .addComponent(jButton4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton_salir))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton_mostrar_receta)
-                                .addGap(46, 46, 46)
-                                .addComponent(jButton3)
-                                .addGap(67, 67, 67)
-                                .addComponent(jButton1)))))
-                .addContainerGap(90, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton_mostrar_receta)
-                            .addComponent(jButton3)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(1, 1, 1)))
-                .addGap(22, 22, 22)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton_mostrar_coctel)
-                    .addComponent(jButton4)
-                    .addComponent(jButton_salir)))
-        );
+        jButton1.setText("jButton1");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 350, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jMenu1.setText("File");
+
+        jbtn_agregar.setText("Agregar Receta");
+        jMenu1.add(jbtn_agregar);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Salir");
+
+        jMenuItem2.setText("Salir");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_salirActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_jButton_salirActionPerformed
-
-    private void jButton_mostrar_recetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_mostrar_recetaActionPerformed
+    private void jbtn_recetasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_recetasActionPerformed
         FormListaReceta receta = new FormListaReceta();
         receta.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jButton_mostrar_recetaActionPerformed
+        //dispose();
+    }//GEN-LAST:event_jbtn_recetasActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,11 +173,14 @@ public class Form_Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton_mostrar_coctel;
-    private javax.swing.JButton jButton_mostrar_receta;
-    private javax.swing.JButton jButton_salir;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JButton jbtm_ensaladas;
+    private javax.swing.JMenuItem jbtn_agregar;
+    private javax.swing.JButton jbtn_cocteles;
+    private javax.swing.JButton jbtn_recetas;
     // End of variables declaration//GEN-END:variables
 }
