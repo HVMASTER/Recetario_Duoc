@@ -15,6 +15,7 @@ public class FormListaReceta extends javax.swing.JFrame {
     public FormListaReceta() {
         initComponents();
         this.Listar_Recetas();
+        this.jbtn_mostrarRe.setEnabled(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -25,6 +26,7 @@ public class FormListaReceta extends javax.swing.JFrame {
         jtbl_list_recetas = new javax.swing.JTable();
         jbtn_listarReceta = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jbtn_mostrarRe = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -53,6 +55,13 @@ public class FormListaReceta extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         jLabel1.setText("LISTADO DE RECETAS");
 
+        jbtn_mostrarRe.setText("Mostrar Receta");
+        jbtn_mostrarRe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_mostrarReActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -61,9 +70,12 @@ public class FormListaReceta extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jbtn_listarReceta, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 678, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 678, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jbtn_listarReceta, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jbtn_mostrarRe, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(225, 225, 225)
                         .addComponent(jLabel1)))
@@ -77,7 +89,9 @@ public class FormListaReceta extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jbtn_listarReceta, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jbtn_listarReceta, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                    .addComponent(jbtn_mostrarRe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(22, 22, 22))
         );
 
@@ -113,10 +127,22 @@ public class FormListaReceta extends javax.swing.JFrame {
         this.Listar_Recetas();
     }//GEN-LAST:event_jbtn_listarRecetaActionPerformed
 
+    private void jbtn_mostrarReActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_mostrarReActionPerformed
+
+        int fila = this.jtbl_list_recetas.getSelectedRow();
+        Object idReceta = this.jtbl_list_recetas.getValueAt(fila, 0);
+        Object nombreReceta = this.jtbl_list_recetas.getValueAt(fila, 1);
+        System.out.println("Fila Seleccionada: " + fila);
+
+        Form_Mostrar_Receta fmostrar = new Form_Mostrar_Receta();
+        fmostrar.setVisible(true);
+
+
+    }//GEN-LAST:event_jbtn_mostrarReActionPerformed
+
     private void jtbl_list_recetasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtbl_list_recetasMouseClicked
-        int prueba = this.jtbl_list_recetas.getSelectedRow();
-        Object datos = this.jtbl_list_recetas.getValueAt(prueba, 0);
-        System.out.println(datos);
+        this.jbtn_mostrarRe.setEnabled(true);
+
     }//GEN-LAST:event_jtbl_list_recetasMouseClicked
 
     public static void main(String args[]) {
@@ -131,6 +157,7 @@ public class FormListaReceta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton jbtn_listarReceta;
+    private javax.swing.JButton jbtn_mostrarRe;
     private javax.swing.JTable jtbl_list_recetas;
     // End of variables declaration//GEN-END:variables
 }
