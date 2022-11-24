@@ -143,7 +143,6 @@ public class FormListaReceta extends javax.swing.JFrame {
     private void jtbl_list_recetasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtbl_list_recetasMouseClicked
         this.jbtn_mostrarRe.setEnabled(true);
 
-
     }//GEN-LAST:event_jtbl_list_recetasMouseClicked
 
     public static void main(String args[]) {
