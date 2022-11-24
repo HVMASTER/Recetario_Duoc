@@ -164,7 +164,7 @@ public class Form_Menu extends javax.swing.JFrame {
     private void jButton_mostrar_recetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_mostrar_recetaActionPerformed
         FormListaReceta receta = new FormListaReceta();
         receta.setVisible(true);
-        //dispose();
+        dispose();
     }//GEN-LAST:event_jButton_mostrar_recetaActionPerformed
 
     /**
