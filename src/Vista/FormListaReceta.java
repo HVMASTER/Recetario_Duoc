@@ -36,6 +36,11 @@ public class FormListaReceta extends javax.swing.JFrame {
                 "ID", "Nombre", "Tiempo", "Porciones", "Categoria"
             }
         ));
+        jtbl_list_recetas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtbl_list_recetasMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jtbl_list_recetas);
 
         jbtn_listarReceta.setText("Listar");
@@ -107,6 +112,12 @@ public class FormListaReceta extends javax.swing.JFrame {
     private void jbtn_listarRecetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_listarRecetaActionPerformed
         this.Listar_Recetas();
     }//GEN-LAST:event_jbtn_listarRecetaActionPerformed
+
+    private void jtbl_list_recetasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtbl_list_recetasMouseClicked
+        int prueba = this.jtbl_list_recetas.getSelectedRow();
+        Object datos = this.jtbl_list_recetas.getValueAt(prueba, 0);
+        System.out.println(datos);
+    }//GEN-LAST:event_jtbl_list_recetasMouseClicked
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {

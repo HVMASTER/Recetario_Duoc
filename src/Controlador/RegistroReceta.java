@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  *
- * @author carlosabarca
+ * @author Carlos Abarca
  */
 public class RegistroReceta {
     

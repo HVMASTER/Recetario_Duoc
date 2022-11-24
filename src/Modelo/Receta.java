@@ -23,6 +23,15 @@ public class Receta {
         this.ingredientes = ingredientes;
     }
 
+    public Receta(String nombreReceta, int tiempo, String porciones, String preparacion, String ingredientes, int idCategoriaReceta) {
+        this.tiempo = tiempo;
+        this.idCategoriaReceta = idCategoriaReceta;
+        this.nombreReceta = nombreReceta;
+        this.porciones = porciones;
+        this.preparacion = preparacion;
+        this.ingredientes = ingredientes;
+    }
+
     public int getIdReceta() {
         return idReceta;
     }
