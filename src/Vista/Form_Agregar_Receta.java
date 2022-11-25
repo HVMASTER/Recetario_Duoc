@@ -244,31 +244,32 @@ public class Form_Agregar_Receta extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         String nombre = this.jTxtNombre.getText();
+        if (nombre.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese un Nombre de receta", "Guardar", 0);
+            this.jTxtNombre.requestFocus();
+            return;
+        }
+        
         int tiempo = Integer.parseInt(this.jTxtTiempo.getText());
         String porciones = this.jTxtPorciones.getText();
         String preparacion = this.jTxtPreparacion.getText();
         String ingredientes = this.jTxtIngredientes.getText();
         int categoria = this.jCmbCategoria.getItemAt(jCmbCategoria.getSelectedIndex()).getIdCategoriaReceta();
 
-        if (this.jTxtNombre.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Ingrese un Nombre de receta", "Guardar", 0);
+        Receta rec = new Receta(nombre, tiempo, porciones, preparacion, ingredientes, categoria);
+        RegistroReceta reg = new RegistroReceta();
+
+        if (reg.agregarReceta(rec)) {
+            JOptionPane.showMessageDialog(null, "Receta Agregada", "Guardar", 2);
+            this.Limpiar_Input();
             this.jTxtNombre.requestFocus();
         } else {
-            Receta rec = new Receta(nombre, tiempo, porciones, preparacion, ingredientes, categoria);
-            RegistroReceta reg = new RegistroReceta();
-
-            if (reg.agregarReceta(rec)) {
-                JOptionPane.showMessageDialog(null, "Receta Agregada", "Guardar", 2);
-                this.Limpiar_Input();
-                this.jTxtNombre.requestFocus();
-            } else {
-                JOptionPane.showMessageDialog(null, "Receta no Agregada", "Guardar", 0);
-            }
+            JOptionPane.showMessageDialog(null, "Receta no Agregada", "Guardar", 0);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public void CargarReceta(int IdReceta) {
-        
+
         this.jButton1.setEnabled(false);
         this.Enabled_Input();
 
@@ -279,11 +280,11 @@ public class Form_Agregar_Receta extends javax.swing.JFrame {
         this.jTxtNombre.setText(pac.getNombreReceta());
         this.jTxtTiempo.setText(String.valueOf(pac.getTiempo()));
         this.jTxtPorciones.setText(pac.getPorciones());
-        
+
         RegistroCategoria regc = new RegistroCategoria();
         CategoriaReceta cat = regc.buscarCategoriaId(pac.getIdCategoriaReceta());
         this.jCmbCategoria.setSelectedItem(cat.getNombreCategoriaReceta());
-  
+
         this.jTxtPreparacion.setText(pac.getPreparacion());
         this.jTxtIngredientes.setText(pac.getIngredientes());
 
@@ -315,15 +316,15 @@ public class Form_Agregar_Receta extends javax.swing.JFrame {
     }//GEN-LAST:event_jBtnEditarActionPerformed
 
     private void jBtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnEliminarActionPerformed
-      
+
         int IdReceta = Integer.parseInt(this.jLbl_IdReceta.getText());
         RegistroReceta reg = new RegistroReceta();
-        
+
         if (reg.eliminarReceta(IdReceta)) {
-            JOptionPane.showMessageDialog(null,"Receta Eliminada","Eliminar Receta",1);
+            JOptionPane.showMessageDialog(null, "Receta Eliminada", "Eliminar Receta", 1);
             this.Limpiar_Input();
-        }else{
-            JOptionPane.showMessageDialog(null,"Error Receta no Eliminada","Eliminar Receta",0);
+        } else {
+            JOptionPane.showMessageDialog(null, "Error Receta no Eliminada", "Eliminar Receta", 0);
         }
     }//GEN-LAST:event_jBtnEliminarActionPerformed
 
