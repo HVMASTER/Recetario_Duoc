@@ -113,7 +113,7 @@ public class FormLogin extends javax.swing.JFrame {
     private void jbtn_registroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_registroActionPerformed
         Form_Registro freg = new Form_Registro();
         freg.setVisible(true);
-        dispose();
+        
     }//GEN-LAST:event_jbtn_registroActionPerformed
 
     private void jlbl_leerMasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlbl_leerMasMouseClicked
