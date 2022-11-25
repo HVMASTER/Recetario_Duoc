@@ -33,12 +33,19 @@ public class FormLogin extends javax.swing.JFrame {
         jlbl_leerMas = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAutoRequestFocus(false);
         setBackground(new java.awt.Color(204, 255, 255));
-        setPreferredSize(new java.awt.Dimension(700, 600));
+        setMinimumSize(new java.awt.Dimension(350, 393));
+        setPreferredSize(new java.awt.Dimension(350, 393));
         setResizable(false);
+        setSize(new java.awt.Dimension(350, 393));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jtxt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 190, 40));
-        getContentPane().add(jpass_contrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, 190, 40));
+
+        jtxt_usuario.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        getContentPane().add(jtxt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 190, 40));
+
+        jpass_contrasena.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        getContentPane().add(jpass_contrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 190, 40));
 
         jbtn_registro.setText("REGISTRARSE");
         jbtn_registro.addActionListener(new java.awt.event.ActionListener() {
@@ -46,7 +53,7 @@ public class FormLogin extends javax.swing.JFrame {
                 jbtn_registroActionPerformed(evt);
             }
         });
-        getContentPane().add(jbtn_registro, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 420, -1, -1));
+        getContentPane().add(jbtn_registro, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
 
         jbtn_ingresar.setText("INGRESAR");
         jbtn_ingresar.addActionListener(new java.awt.event.ActionListener() {
@@ -54,18 +61,18 @@ public class FormLogin extends javax.swing.JFrame {
                 jbtn_ingresarActionPerformed(evt);
             }
         });
-        getContentPane().add(jbtn_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 420, -1, -1));
+        getContentPane().add(jbtn_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel2.setText("Usuario");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, -1));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jLabel2.setText("Usuario :");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel5.setText("Contraseña");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, -1, -1));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jLabel5.setText("Contraseña :");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/libro (2).png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, -1, -1));
 
         jlbl_leerMas.setForeground(new java.awt.Color(0, 102, 255));
         jlbl_leerMas.setText("LEER MAS");
@@ -74,7 +81,7 @@ public class FormLogin extends javax.swing.JFrame {
                 jlbl_leerMasMouseClicked(evt);
             }
         });
-        getContentPane().add(jlbl_leerMas, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 510, -1, -1));
+        getContentPane().add(jlbl_leerMas, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
