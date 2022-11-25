@@ -14,7 +14,7 @@ import java.awt.Dimension;
 
 /**
  *
- * @author MONKEY.D.LUFFY
+ * @author Hernán
  */
 public class Form_Registro extends javax.swing.JFrame {
     
