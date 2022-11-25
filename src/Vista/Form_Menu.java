@@ -31,77 +31,87 @@ public class Form_Menu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jbtm_ensaladas = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jbtn_agregar = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        jMenuItemCategoria = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setAlwaysOnTop(true);
-        setMaximumSize(new java.awt.Dimension(2147483, 2147483));
-        setMinimumSize(getMaximumSize());
-        setResizable(false);
+        setLocation(new java.awt.Point(0, 0));
+        setMinimumSize(new java.awt.Dimension(797, 681));
+        setName("Recetario"); // NOI18N
+        setSize(new java.awt.Dimension(797, 681));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jbtn_recetas.setForeground(new java.awt.Color(238, 238, 238));
         jbtn_recetas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_recetas.png"))); // NOI18N
         jbtn_recetas.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jbtn_recetas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jbtn_recetas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jbtn_recetas.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_recetas_press.png"))); // NOI18N
-        jbtn_recetas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_recetas_over.png"))); // NOI18N
+        jbtn_recetas.setRequestFocusEnabled(false);
         jbtn_recetas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtn_recetasActionPerformed(evt);
             }
         });
-        getContentPane().add(jbtn_recetas, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 410, 250));
+        getContentPane().add(jbtn_recetas, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 310, 190));
 
         jbtn_cocteles.setForeground(new java.awt.Color(238, 238, 238));
         jbtn_cocteles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_coctel.png"))); // NOI18N
         jbtn_cocteles.setBorder(null);
         jbtn_cocteles.setBorderPainted(false);
         jbtn_cocteles.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jbtn_cocteles.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_coctel_press.png"))); // NOI18N
-        jbtn_cocteles.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_coctel_over.png"))); // NOI18N
-        getContentPane().add(jbtn_cocteles, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 550, 410, 250));
+        jbtn_cocteles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_coctelesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jbtn_cocteles, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, 310, 190));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/titulo_v2.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 670, 240));
+        jLabel2.setIgnoreRepaint(true);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 500, 210));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_postre.png"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.setBorderPainted(false);
-        jButton3.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_postre_press.png"))); // NOI18N
-        jButton3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_postre_over.png"))); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 550, 410, 250));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 420, 310, 190));
 
         jbtm_ensaladas.setForeground(new java.awt.Color(238, 238, 238));
         jbtm_ensaladas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_ensaladas.png"))); // NOI18N
         jbtm_ensaladas.setBorder(null);
         jbtm_ensaladas.setBorderPainted(false);
-        jbtm_ensaladas.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_ensaladas_press.png"))); // NOI18N
-        jbtm_ensaladas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/boton_ensaladas_over.png"))); // NOI18N
-        getContentPane().add(jbtm_ensaladas, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 260, 410, 250));
+        jbtm_ensaladas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtm_ensaladasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jbtm_ensaladas, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 310, 190));
 
-        jButton1.setText("jButton1");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 350, -1, -1));
-
-        jMenu1.setText("File");
+        jMenu1.setText("Archivo");
 
         jbtn_agregar.setText("Agregar Receta");
+        jbtn_agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_agregarActionPerformed(evt);
+            }
+        });
         jMenu1.add(jbtn_agregar);
 
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Salir");
+        jMenuItemCategoria.setText("Categoria Receta");
+        jMenuItemCategoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCategoriaActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItemCategoria);
 
         jMenuItem2.setText("Salir");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -109,13 +119,14 @@ public class Form_Menu extends javax.swing.JFrame {
                 jMenuItem2ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem2);
+        jMenu1.add(jMenuItem2);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtn_recetasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_recetasActionPerformed
@@ -125,42 +136,44 @@ public class Form_Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtn_recetasActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        FormListaReceta receta = new FormListaReceta();
+        receta.setVisible(true);
+
+        receta.Listar_Recetas_Categoria((int) 4);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void jbtn_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_agregarActionPerformed
+        Form_Agregar_Receta receta = new Form_Agregar_Receta();
+        receta.setVisible(true);
+    }//GEN-LAST:event_jbtn_agregarActionPerformed
+
+    private void jbtm_ensaladasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtm_ensaladasActionPerformed
+        FormListaReceta receta = new FormListaReceta();
+        receta.setVisible(true);
+
+        receta.Listar_Recetas_Categoria((int) 9);
+    }//GEN-LAST:event_jbtm_ensaladasActionPerformed
+
+    private void jbtn_coctelesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_coctelesActionPerformed
+        FormListaReceta receta = new FormListaReceta();
+        receta.setVisible(true);
+
+        receta.Listar_Recetas_Categoria((int) 10);
+    }//GEN-LAST:event_jbtn_coctelesActionPerformed
+
+    private void jMenuItemCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCategoriaActionPerformed
+        Form_Categoria categoria = new Form_Categoria();
+        categoria.setVisible(true);
+    }//GEN-LAST:event_jMenuItemCategoriaActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Form_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Form_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Form_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Form_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -171,13 +184,12 @@ public class Form_Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItemCategoria;
     private javax.swing.JButton jbtm_ensaladas;
     private javax.swing.JMenuItem jbtn_agregar;
     private javax.swing.JButton jbtn_cocteles;

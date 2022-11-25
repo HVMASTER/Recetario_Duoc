@@ -92,6 +92,5 @@ public class Receta {
     public String toString() {
         return "Receta{" + "idReceta=" + idReceta + ", timepo=" + tiempo + ", idCategoriaReceta=" + idCategoriaReceta + ", nombreReceta=" + nombreReceta + ", porciones=" + porciones + ", preparacion=" + preparacion + ", ingredientes=" + ingredientes + '}';
     }
-    
-    
+        
 }

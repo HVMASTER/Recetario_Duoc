@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Modelo;
 
 /**
@@ -21,6 +18,10 @@ public class CategoriaReceta {
 
     public CategoriaReceta(int idCategoriaReceta, String nombreCategoriaReceta) {
         this.idCategoriaReceta = idCategoriaReceta;
+        this.nombreCategoriaReceta = nombreCategoriaReceta;
+    }
+    
+    public CategoriaReceta(String nombreCategoriaReceta) {
         this.nombreCategoriaReceta = nombreCategoriaReceta;
     }
     
@@ -47,7 +48,7 @@ public class CategoriaReceta {
 
     @Override
     public String toString() {
-        return "CategoriaReceta{" + "idCategoriaReceta=" + idCategoriaReceta + ", nombreCategoriaReceta=" + nombreCategoriaReceta + '}';
+        return  this.nombreCategoriaReceta;
     }
     
    
